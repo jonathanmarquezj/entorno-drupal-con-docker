@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  php:
+    container_name: drupal
+    volumes:
+    - type: volume
+      source: staticfiles
+      target: /opt/drupal/web
+    image: jonathan-drupal
+    restart: always
+    hostname: drupal
+    networks:
+      - red-entorno
+
+  nginx:
+    container_name: nginx
+    depends_on:
+      - "php"
+    volumes:
+    - type: volume
+      source: staticfiles
+      target: /var/www/html
+    environment:
+      NGINX_BACKEND_PORT: 9000
+      NGINX_SERVER_NAME: localhost
+      NGINX_BACKEND_HOST: drupal
+    image: jonathan-nginx
+    networks:
+      - red-entorno
+    ports:
+     - 80:80
+     - 443:443
+
+  db:
+    container_name: mysql
+    volumes:
+    - type: volume
+      source: drupaldatabase
+      target: /var/lib/mysql
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+      MYSQL_ROOT_PASSWORD: asdasd
+    networks:
+      - red-entorno
+
+volumes:
+  staticfiles:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./opt/data/proyectoPrueba/files
+      o: bind
+  drupaldatabase:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./opt/data/proyectoPrueba/mysql
+      o: bind
+
+networks:
+  red-entorno:

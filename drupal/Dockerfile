@@ -1,5 +1,8 @@
 # Comando a ejecutar para crear la imagen
-# docker build -t "drupal:8.9.13.jonathan" .
+# docker build -t "jonathan-drupal" .
+
+# Arrancar
+# docker run -d --name drupal jonathan-drupal
 
 FROM drupal:8.9.13-php7.4-fpm-buster as base
 
@@ -26,5 +29,6 @@ RUN apt-get update && \
 WORKDIR /var/www/html
 
 EXPOSE 9000
+
 
 CMD ["php-fpm","--fpm-config","/usr/local/etc/php-fpm.conf","-c","/usr/local/etc/php/php.ini"]
