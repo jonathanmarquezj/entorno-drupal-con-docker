@@ -1,13 +1,8 @@
-# Comando a ejecutar para crear la imagen
-# docker build -t "jonathan-drupal" .
-
-# Arrancar
-# docker run -d --name drupal jonathan-drupal
-
+# IMAGEN BASE
 FROM drupal:8.9.13-php7.4-fpm-buster as base
 
 
-## Aditional packages for day-2 operations
+## PAQUETES NECESARIOS
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     unzip \
@@ -25,9 +20,10 @@ RUN apt-get update && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ && \
     rm -rf /var/lib/apt/lists/*
 
-
+# DIRECTORIO EN EL CUAL NOS REDIGIREMOS AL CONECTARNOS EN EL CONTENEDOR
 WORKDIR /var/www/html
 
+# PUERTO DEL CONTENEDOR
 EXPOSE 9000
 
 

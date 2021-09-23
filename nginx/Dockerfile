@@ -1,10 +1,4 @@
-# Comando a ejecutar para crear la imagen
-# docker build -t "jonathan-nginx" .
-
-# Arrancar
-# docker run -d --name nginx -p 80:80 jonathan-nginx
-
-
+# IMAGEN BASE
 FROM nginx:1.19.6
 
 # NECESARIO PARA LAS VARIABLES 
