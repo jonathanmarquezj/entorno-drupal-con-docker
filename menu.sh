@@ -23,10 +23,10 @@ case $seleccion_menu in
         exit 0
     ;;
     1) # INICIAR ENTORNO
+        echo "-----------------------------------------"
+        echo "            INICIANDO ENTORNO"
+        echo "-----------------------------------------"
         docker-compose up -d
-        echo "-----------------------------------------"
-        echo "             ENTORNO INICIADO"
-        echo "-----------------------------------------"
         exit 0
     ;;
     2) # REALIZAR COPIA
