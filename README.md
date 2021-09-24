@@ -2,10 +2,10 @@
 ## Directorios necesarios <br/>
 Tendremos que crear primero los directorios necesarios para el proyecto, de tal manera que donde descargamos el repositorio tendremos que crear las siguientes carpetas. <br/>
 <code>
-mkdir -p opt/data/proyectoPrueba/mysql
+mkdir -p volumen/mysql
 </code><br/>
 <code>
-mkdir opt/data/proyectoPrueba/files
+mkdir volumen/files
 </code><br/>
 <br/>
 De tal manera que quedario la estructura. 

@@ -58,13 +58,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ./opt/data/proyectoPrueba/files
+      device: ./volumen/files
       o: bind
   drupaldatabase:
     driver: local
     driver_opts:
       type: none
-      device: ./opt/data/proyectoPrueba/mysql
+      device: ./volumen/mysql
       o: bind
 
 # RED
