@@ -29,6 +29,9 @@ De tal manera que quedario la estructura.
 │           └── mysql<br/>
 └── README.md<br/>
 
+## Cargar variables necesarias <br>
+Copiamos el contenido del archivo ".env" en la terminal.
+
 ## Para crear las imagenes necesarios <br/>
 Para crear las imagens necesarios nos dirigimos al directorio "drupal" y ejecutamos el siguiente comando.<br>
 <code>docker build -t "jonathan-drupal" .</code>
