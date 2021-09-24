@@ -49,11 +49,11 @@ Comprobamos que funciona con el siguiente comando. <br/>
 <code>docker-compose ps </code>
 
 Y nos tendrea que salir algo como esto <br/>
- Name               Command               State                                   Ports                                 <br/>
-------------------------------------------------------------------------------------------------------------------------<br/>
-drupal   docker-php-entrypoint php- ...   Up      9000/tcp                                                              <br/>
-mysql    docker-entrypoint.sh mysqld      Up      3306/tcp                                                              <br/>
-nginx    /bin/bash /assets/bin/dock ...   Up      0.0.0.0:443->443/tcp,:::443->443/tcp, 0.0.0.0:80->80/tcp,:::80->80/tcp<br/>
+| Name | Command | State | Ports |
+|---|---|---|---|
+| drupal | docker-php-entrypoint php- ... | Up | 9000/tcp |
+| mysql | docker-entrypoint.sh mysqld | Up | 3306/tcp |
+| nginx | /bin/bash /assets/bin/dock ... | Up | 0.0.0.0:443->443/tcp,:::443->443/tcp, 0.0.0.0:80->80/tcp,:::80->80/tcp |
 
 Y si nos dirigimos al "localhost" en mi caso, en el caso de que modifiqueis el "docker-compose.yaml" tendreis que poner el correspondiente. Nos aparecera la web de drupal para comenzar la instalación.
 
