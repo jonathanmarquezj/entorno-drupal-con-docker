@@ -24,9 +24,9 @@ services:
       source: staticfiles
       target: /var/www/html
     environment:
-      NGINX_BACKEND_PORT: 9000
-      NGINX_SERVER_NAME: localhost
-      NGINX_BACKEND_HOST: drupal
+      NGINX_BACKEND_PORT: ${NGINX_BACKEND_PORT}
+      NGINX_SERVER_NAME: ${NGINX_SERVER_NAME}
+      NGINX_BACKEND_HOST: ${NGINX_BACKEND_HOST}
     image: jonathan-nginx
     restart: always
     networks:
@@ -45,10 +45,10 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_DATABASE: drupal
-      MYSQL_USER: drupal
-      MYSQL_PASSWORD: drupal
-      MYSQL_ROOT_PASSWORD: asdasd
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks:
       - red-entorno
 
