@@ -28,6 +28,7 @@ services:
       NGINX_SERVER_NAME: localhost
       NGINX_BACKEND_HOST: drupal
     image: jonathan-nginx
+    restart: always
     networks:
       - red-entorno
     ports:
